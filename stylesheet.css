@@ -1,0 +1,290 @@
+body {
+  margin: 0;
+  border: none;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center;
+  background-color: #dddddd;
+}
+
+h1 {
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header {
+  color: white;
+  width: 100vw;
+  height: 9vh;
+  position: fixed;
+  margin: -12.5vh 0 0 0;                                                                 
+  border: none;
+  padding: 2vh 2vw 1vh 2vw;
+  text-align: justify;
+}
+
+header::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+header h1::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;  
+  height: 100%;
+}
+
+header h1 {
+  height: 100%;
+  text-align: center;
+}
+
+#adOne {
+  position: fixed;
+  left: 1vw;
+  height: auto;
+  width: 10.8vw;
+  margin-top: 1vh; 
+}
+
+#adTwo {
+  position: fixed;
+  right: 1vw;
+  height: auto;
+  width: 10.8vw;
+  margin-top: 1vh;
+}
+
+#mainPart {
+//  position: absolute;
+//  left: 14vw;
+  width: 68%;
+  background-color: white;
+  padding: 25px 30px 30px 40px;
+  margin-bottom: 3vh;
+  margin-left: 13vw;
+  margin-top: 12.5vh;
+  border-top: 1vh solid #dddddd;                                                               
+}
+
+#subtitle {
+  font-size: 1.3em;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+#bigImg {
+  width: 650px;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-bottom: 35px; 
+}
+
+figure {
+  margin: 0 0 0 30px;
+}
+
+.titlePar {
+  font-size: 1.7em;
+  font-weight: bold;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p, li {
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+p {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.hide {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  background-color: #111111;
+  color: white;
+  width: 100%;
+  padding: 10px 25px 15px 15px;
+}
+
+a {
+  cursor: pointer;
+  color: white;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.firstParWords {
+  margin-top: 0 !important;
+}
+
+#blackA {
+  color: #0000EE;
+}
+
+#footerUl {
+  padding-left: 20px;
+}
+
+#contactUs {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.socialMedia {
+  height: 75px;
+  width: auto; 
+  cursor: pointer; 
+}
+
+#socialMediaDiv {
+  text-align: left;
+}
+
+.socialMediaTwo {
+  margin-left: 5px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 9px 16px;   
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr:nth-child(odd) {
+  background: #DDDDDD;
+}
+tr:nth-child(even) {
+  background: #FFFFFF;
+}
+
+th {
+  background: #FFFFFF !important;
+}
+
+input[type="button"] {
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 10px;
+} 
+
+#qna {
+  position: absolute;
+  margin-top: -350px;
+  margin-left: 370px;
+  text-align: left !important;
+  word-wrap: normal;
+  width: 60em;
+}
+
+.shareFooterPar {
+  text-align: left !important;
+}
+
+textarea {
+  width: 60em;
+  height: 80px;
+  margin-top: 5px;
+  padding: 5px 8px;
+  resize: vertical;
+}
+
+.recentComment {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.recentTime {
+  font-weight: bold;
+}
+
+#shareB {
+  background-color: black;
+  border: solid 1.5px white;
+  border-radius: 3px;
+  color: white;
+  margin: 1px 0 15px 0;
+//  position: absolute;
+//  margin-top: 105px;
+}
+
+#shareBComments {
+  background-color: white;
+  border: solid 1.5px black;
+  border-radius: 3px;
+  color: black;
+  transition: 0.15s;
+  margin: 1px 0 20px -57em;
+}
+
+#shareBComments:hover {
+  background-color: #eeeeee;
+}
+
+#shareBComments:active {
+  background-color: #dddddd;
+}
+
+#recentParComments {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.noMarginTop {
+  margin-top: 0;
+}
+
+.commentsSpanButton {
+  border-bottom: 3px solid !important;
+  padding: 2px 50px !important;
+  background-color: rgba(0, 0, 0, 0) !important;  
+}
+
+#buttonRight {  
+  margin-left: 20px;
+}
+
+#commentsButtons {
+  background-color: #eeeeee;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heart {
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: normal !important;
+}

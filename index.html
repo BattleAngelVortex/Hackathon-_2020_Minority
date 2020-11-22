@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Aortic Stenosis Disease</title>
+    
+  </head>
+  <body>
+  
+    <img src="verticalAd.png" id="adOne">
+    <img src="verticalAd.png" id="adTwo">
+    
+    <header id="header">
+      <h1>The Aortic Stenosis</h1>
+    </header>
+    
+    <div id="mainPart">
+      <h1>The Aortic Stenosis disease is spreading!</h1>
+      <p id="subtitle">Aortic Stenosis (AS) is one of the most common and serious valve disease problems. However, not many people know about it and are not aware of how deadly it can be...</p>
+      <figure>
+        <img src="bigImg.jpg" id="bigImg">
+        <figcaption>Normal heart vs heart with Aortic Stenosis stenosis comparison. Image taken from <a href="http://www.tinyscarvalvesurgery.com/2017/12/15/facts-aortic-stenosis/" target="_blank" id="blackA">here</a>.</figcaption>                     
+      </figure>
+      <p class="titlePar">Info about the disease</p>
+      <p>Aortic stenosis (AS) is the narrowing of the exit of the left ventricle of the heart (where the aorta begins), such that problems result.
+       It may occur at the aortic valve as well as above and below this level.
+       It typically gets worse over time. It is usually congenital but can also be caught. 
+       Symptoms often come on gradually with a decreased ability to exercise often occurring first.</p>
+      <p>Aortic Stenosis kills 50% of infected people and the only way to be cured is by surgery.
+       It is the second most common heart disease in well developed cities.
+       For people over the age of 75 years, the prevalence of aortic stenosis is 3%.</p><br>
+      
+      <p class="titlePar">Main symptoms</p>      
+      <p>The three main symptoms of Aortic stenosis are:</p>
+      <ul>
+        <li>Loss of consciousness</li>
+        <li>Anginal chest pain</li>
+        <li>Shortness of breath with activity</li>
+      </ul>
+      <p>Other symptoms can be:</p>
+      <ul>
+        <li>Tiredness</li>
+        <li>Shortness of breath while lying flat</li>
+        <li>Episodes of shortness of breath at night</li>
+        <li>Swollen legs and feet</li>
+      </ul><br>
+      
+      <p class="titlePar">Short video</p>
+      <iframe width="700" height="394" src="https://www.youtube.com/embed/EDr8RkKMsRQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
+    </div>
+    
+    <footer>
+      
+      <p onclick="sendEmail()" id="contactUs">Contact us</p>
+      <p><a href="https://en.wikipedia.org/wiki/Aortic_stenosis" target="_blank">Aortic stenosis on Wikipedia</a></p>
+      <p><a href="advertisements.html">Our advertisement materials</a></p>
+      <p><a href="words.html">Word explanation</a></p>                                                   
+      <p><a href="https://newheartvalve.com/uk/" target="_blank">Learn more</a></p>
+      <p><a href="https://owncloud.ikem.cz/index.php/s/gcx0GbdTaTzBzL7" target="_blank">Watch a video (Learn more #2)</a></p>
+      <div id="socialMediaDiv">
+        <p class="titlePar" style="text-align: left; margin-top: 35px;">Follow us</p>
+        <img src="facebook.png" class="socialMedia" onclick="socialMedia(0)">
+        <img src="instagram.png" class="socialMedia socialMediaTwo" onclick="socialMedia(1)"> 
+        <img src="twitter.png" class="socialMedia socialMediaTwo" onclick="socialMedia(2)">
+      </div>
+      <div id="qna">
+        <p class="titlePar shareFooterPar">Share your ideas, thoughts and peresonal experience</p>
+        <textarea placeholder="Write your questions here..." id="commentTextarea"></textarea>
+        <div>
+          <input type="button" value="Share" id="shareB" onclick="addComment()">
+        </div>        
+        <p class="titlePar shareFooterPar">Most recent comment</p>
+        <p class="recentTime" id="commentTime">17:35</p>
+        <p class="recentComment" id="commentOutput">I think the most important of the symptoms is the chest pain...</p><br>       
+        <a href="comments.html" target="_blank">View other comments</a>
+      </div>
+    </footer>    
+    
+    <script>
+    
+      function sendEmail() {
+        window.location.href = "mailto:asinfo@email.cz";
+      }
+      
+      var socialMediaURLs = ["https://www.facebook.com/aortic.stenosis.336/photos", "https://www.instagram.com/aortic_stenosis/", "https://twitter.com/StenosisAortic"];
+      
+      function socialMedia(a) {
+        window.open(socialMediaURLs[a]);
+      }
+      
+      function addComment() {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var text = document.getElementById("commentTextarea");
+        document.getElementById("commentTime").textContent = h + ":" + m;
+        document.getElementById("commentOutput").textContent = text.value;
+        text.value = "";
+      }
+      
+      var colors = ["#FF1A71", "#FCA106", "#1A8E9C"];
+      document.getElementById("header").style.backgroundColor = colors[Math.floor(Math.random() * 3)];
+      
+      window.watsonAssistantChatOptions = {
+        integrationID: "7168fee1-e39f-482e-85cf-e234f3b0d574", // The ID of this integration.
+        region: "eu-gb", // The region your integration is hosted in.
+        serviceInstanceID: "928f2af5-21e2-4089-a139-dddc606de65e", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+      
+/*      
+      var adOne = document.getElementById("adOne");
+      var adTwo = document.getElementById("adTwo");
+     
+      window.onscroll = function() {myFunction()};
+
+      function myFunction() {
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          adOne.className = "hide";
+          adTwo.className = "hide";
+        } else {
+          adOne.className = "";
+          adTwo.className = "";
+        }
+      }                                                                        */                       
+    
+    </script>
+
+  </body>
+</html>

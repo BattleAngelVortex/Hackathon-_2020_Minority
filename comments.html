@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Comments</title>
+    
+  </head>
+  <body>
+
+    <img src="verticalAd.png" id="adOne">
+    <img src="verticalAd.png" id="adTwo">
+    
+    <header id="header">
+      <h1>Comments</h1>
+    </header>
+    
+    <div id="mainPart">      
+      <p class="titlePar">Share your ideas, thoughts and peresonal experience</p>      
+      <textarea placeholder="Write your questions here..." id="commentTextarea"></textarea>
+      <div>
+        <input type="button" value="Share" id="shareBComments" onclick="addComment()">
+      </div>
+      <div id="commentsButtons">
+        <input type="button" class="commentsSpanButton" value="Recent" id="buttonLeft" onclick="pickRecent()">
+        <input type="button" class="commentsSpanButton" value="Most liked" id="buttonRight" onclick="pickLiked()">
+      </div>
+      <p class="titlePar" id="recentParComments">The most recent thoughts</p>
+      <div id="myComment">
+      </div>
+      <p class="recentTime" class="noMarginTop">17:35 - <span onclick="red(this)" class="heart">3 &#9829;</span></p>
+      <p class="recentComment">I think the most important of the symptoms is the chest pain...</p>
+      <p class="recentTime" class="noMarginTop">16:46 - <span onclick="red(this)" class="heart">5 &#9829;</span></p>
+      <p class="recentComment">I am so glad that someone made this website. It literaly saved my life! I thought that I was just more and more tired because I am 78, but when I read about Aortic Stenosis, I found out that it wasn't. I went to the doctor and he confirmed that I have Aortic Stenosis and so I went on the surgery and I'm fine now! Thank you so much!</i></p>
+      <p class="recentTime" class="noMarginTop">15:42 - <span onclick="red(this)" class="heart">1 &#9829;</span></p>
+      <p class="recentComment">Blah blah blah...</p>
+      <p class="recentTime" class="noMarginTop">14:13 - <span onclick="red(this)" class="heart">0 &#9829;</span></p>
+      <p class="recentComment">Blah blah...</p>
+      <p class="recentTime" class="noMarginTop">10:02 - <span onclick="red(this)" class="heart">4 &#9829;</span></p>
+      <p class="recentComment">Blah...</p>
+      <p class="recentTime" class="noMarginTop">8:52 - <span onclick="red(this)" class="heart">6 &#9829;</span></p>
+      <p class="recentComment">...</p>
+    </div>
+    
+    <script>
+    
+      var colors = ["#FF1A71", "#FCA106", "#1A8E9C"];
+      var randomColor = Math.floor(Math.random() * 3);
+      document.getElementById("header").style.backgroundColor = colors[randomColor];
+      var left = document.getElementById("buttonLeft");
+      var right = document.getElementById("buttonRight");
+      pickRecent();
+      
+      function red(clickedElement) {
+        if(clickedElement.style.color != "red") {
+          clickedElement.style.color = "red";
+          var firstCharacter = clickedElement.innerHTML.charAt(0); 
+          clickedElement.innerHTML = parseInt(firstCharacter) + 1 + ' &#9829;'
+        } else {
+          clickedElement.style.color = "black";
+          var firstCharacter = clickedElement.innerHTML.charAt(0); 
+          clickedElement.innerHTML = parseInt(firstCharacter) - 1 + ' &#9829;'
+        }
+      }
+      
+      function pickRecent() {
+        left.style.color = colors[randomColor];
+        left.style.borderColor = colors[randomColor];
+        right.style.color = "#444444";
+        right.style.borderColor = "#444444";
+      }
+      
+      function pickLiked() {
+        left.style.color = "#444444";
+        left.style.borderColor = "#444444";
+        right.style.color = colors[randomColor];
+        right.style.borderColor = colors[randomColor];  
+      }
+      
+      function addComment() {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        if(m < 10) {
+          m = "0" + m;
+        }
+        if(h < 10) {
+          h = "0" + h;
+        }
+        var text = document.getElementById("commentTextarea");
+        document.getElementById("myComment").innerHTML = '<p class="recentTime" id="noMarginTop">' + h + ':' + m + ' - ' + '<span onclick="red(this)" class="heart">0 &#9829;</span></p><p class="recentComment">' + text.value + '</p>' + document.getElementById("myComment").innerHTML; 
+        text.value = "";
+      }
+    
+    </script>
+
+  </body>
+</html>

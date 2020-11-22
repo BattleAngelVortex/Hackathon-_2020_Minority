@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Advertisement materials</title>
+    
+  </head>
+  <body>
+
+    <img src="verticalAd.png" id="adOne">
+    <img src="verticalAd.png" id="adTwo">
+    
+    <header id="header">
+      <h1>Advertisement materials</h1>
+    </header>
+    
+    <div id="mainPart">
+      <table class="center">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Explanation</th>
+            <th>Size</th>
+            <th>Open</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>verticalAd.png</td>
+            <td>Internet advert</td>
+            <td>25 kB</td>
+            <td><input type="button" onclick="download(0)" value="Open"></td>
+            <td><a href="verticalAd.png" download><input type="button" value="Download"></a></td>
+          </tr>
+          <tr>
+            <td>Billborad yellow.jpg</td>
+            <td>Billboard 1</td>
+            <td>70 kB</td>
+            <td><input type="button" onclick="download(1)" value="Open"></td>
+            <td><a href="BillboardYellow.jpg" download><input type="button" value="Download"></a></td>
+          </tr>
+          <tr>
+            <td>Billborad blue.jpg</td>
+            <td>Billboard 2</td>
+            <td>90 kB</td>
+            <td><input type="button" onclick="download(2)" value="Open"></td>
+            <td><a href="BillboardBlue.jpg" download><input type="button" value="Download"></a></td>
+          </tr>
+          <tr>
+            <td>Billborad pink.jpg</td>
+            <td>Billboard 3</td>
+            <td>54 kB</td>
+            <td><input type="button" onclick="download(3)" value="Open"></td>
+            <td><a href="BillboardPink.png" download><input type="button" value="Download"></a></td>
+          </tr>
+          <tr>
+            <td>*advert*</td>
+            <td>TV and YouTube advert</td>
+            <td>*size*</td>
+            <td><input type="button" onclick="download(4)" value="Open"></td>
+            <td><a href="TVAdvert.mp4" download><input type="button" value="Download"></a></td>              <!-- change the href too! -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <script>
+    
+      var colors = ["#FF1A71", "#FCA106", "#1A8E9C"];
+      var randomColor = Math.floor(Math.random() * 3);
+      document.getElementById("header").style.backgroundColor = colors[randomColor];
+      var css = 'input[type="button"]{ background-color: ' + colors[randomColor] + '; }';
+      var style = document.createElement('style');        
+      style.appendChild(document.createTextNode(css));           
+      document.getElementsByTagName('head')[0].appendChild(style);
+      
+      var files = ["verticalAd.png", "BillboardYellow.jpg", "BillboardBlue.jpg", "BillboardPink.png", "https://www.youtube.com/watch?v=EDr8RkKMsRQ&feature=youtu.be"];
+      function download(b) {
+        window.open(files[b]);
+      }
+    
+    </script>
+
+  </body>
+</html>

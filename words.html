@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Word explanation</title>
+    
+    <style>
+    
+      p {
+        margin: 0;
+      }
+    
+    </style>
+    
+  </head>
+  <body>
+
+    <img src="verticalAd.png" id="adOne">
+    <img src="verticalAd.png" id="adTwo">
+    
+    <header id="header">
+      <h1>Word explanation</h1>
+    </header>
+    
+    <div id="mainPart">
+      <p class="bold firstParWords" id="valve">Valve</p>
+      <p>A heart valve is a one-way valve that normally allows blood to flow in only one direction through the heart.</p>
+      <p class="bold" id="aorta">Aorta</p>
+      <p>The aorta is the main and largest artery in the human body.</p>
+      <p class="bold" id="artery">Artery</p>
+      <p>An artery is a blood vessel that takes blood away from the heart to one or more parts of the body.</p>
+      <p class="bold" id="prevalence">Prevalence</p>
+      <p>Prevalence is the ratio of the number of individuals suffering from a given disease to the number of all individuals in the observed population.</p>
+      <p class="bold" id="angina">Angina</p>
+      <p>Angina is chest pain or pressure, usually due to not enough blood flow to the heart muscle.</p> 
+    </div>
+    
+    <script>
+    
+      var colors = ["#FF1A71", "#FCA106", "#1A8E9C"];
+      document.getElementById("header").style.backgroundColor = colors[Math.floor(Math.random() * 3)];
+    
+    </script>
+
+  </body>
+</html>
